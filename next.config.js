@@ -2,6 +2,10 @@
 const nextConfig = {
   compiler: {
     styledComponents: true,
+    presets: ["next/babel"],
+  },
+  images: {
+    domains: ["books.google.com"],
   },
   reactStrictMode: true,
   webpack(config) {
