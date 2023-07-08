@@ -4,6 +4,9 @@ const nextConfig = {
     styledComponents: true,
     presets: ["next/babel"],
   },
+  images: {
+    domains: ["books.google.com"],
+  },
   reactStrictMode: true,
   webpack(config) {
     config.module.rules.push({

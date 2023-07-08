@@ -1,5 +1,5 @@
 import Book from "../Book/index.js";
-import books from "../../lib/books.js";
+import { books } from "../../lib/books.js";
 
 export default function BooksList() {
   return (
