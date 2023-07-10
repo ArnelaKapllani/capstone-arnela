@@ -55,6 +55,10 @@ export default function BookDetailsPage() {
     { label: "Price", value: `${book.price} ${book.currencyCode}` },
   ];
 
+  const handleOnClose = () => {
+    router.push("/");
+  };
+
   return (
     <>
       <StyledDetailsPage>
@@ -75,6 +79,7 @@ export default function BookDetailsPage() {
             ))}
           </ul>
         </StyledListDetails>
+        <button onClick={handleOnClose}>Close</button>
       </StyledDetailsPage>
       <StyledDescription>
         <h4>Description:</h4>
