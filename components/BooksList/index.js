@@ -7,6 +7,7 @@ const StyledList = styled.div`
   display: grid;
   gap: 20px;
   padding-bottom: 25px;
+  padding-left: 25px;
 `;
 
 export default function BooksList() {
