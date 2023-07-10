@@ -16,13 +16,18 @@ export default function BookDetailsPage() {
   return (
     <div>
       <Image src={book.imageURL} alt={book.title} width={150} height={200} />
-      <h3>{book.title}</h3>
-      <h3>{book.ISBN}</h3>
-      <h3>{book.EAN}</h3>
-      <h3>{book.language}</h3>
-      <h3>{book.pagenumber}</h3>
-      <h3>{book.publication}</h3>
-      <h3>{book.price}</h3>
+      <h4>Title: {book.title}</h4>
+      <h4>Author: {book.author}</h4>
+      <h4>Category: {book.category}</h4>
+      <h4>ISBN: {book.ISBN}</h4>
+      <h4>EAN: {book.EAN}</h4>
+      <h4>Language: {book.language}</h4>
+      <h4>Publication: {book.publication}</h4>
+      <h4>
+        Price: {book.price} {book.currencyCode}
+      </h4>
+      <h4>Number of page: {book.pagenumber}</h4>
+      <h4>Description:</h4>
       <p>{book.description}</p>
     </div>
   );

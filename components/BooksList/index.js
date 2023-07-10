@@ -16,19 +16,7 @@ export default function BooksList() {
       <StyledList>
         {books.map((book) => (
           <Link href={`/book/${book.id}`} key={book.id}>
-            <Book
-              title={book.title}
-              author={book.author}
-              category={book.category}
-              ISBN={book.ISBN}
-              EAN={book.EAN}
-              language={book.language}
-              publication={book.publication}
-              price={book.price}
-              currencyCode={book.currencyCode}
-              pagenumber={book.pagenumber}
-              description={book.description}
-            />
+            <Book book={book} />
           </Link>
         ))}
       </StyledList>
