@@ -1,5 +1,6 @@
-import React from "react";
 import Image from "next/image";
+import Link from "next/link";
+import { useRouter } from "next/router";
 import { StyledDetailsPage } from "./BookDetails.style";
 import { StyledImage } from "./BookDetails.style";
 import { StyledListDetails } from "./BookDetails.style";
@@ -18,8 +19,6 @@ export default function BookDetails({
   price,
   currencyCode,
   description,
-  handleOnClose,
-  id,
 }) {
   const bookDetails = [
     { label: "Title", value: title },
@@ -32,6 +31,11 @@ export default function BookDetails({
     { label: "Number of pages", value: pagenumber },
     { label: "Price", value: `${price} ${currencyCode}` },
   ];
+
+  const router = useRouter();
+  const handleClick = () => {
+    router.push("/");
+  };
 
   return (
     <>
@@ -48,7 +52,7 @@ export default function BookDetails({
             ))}
           </ul>
         </StyledListDetails>
-        <button onClick={handleOnClose}>Close</button>
+        <button onClick={handleClick}>X</button>
       </StyledDetailsPage>
       <StyledDescription>
         <h4>Description:</h4>

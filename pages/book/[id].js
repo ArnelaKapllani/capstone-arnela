@@ -11,10 +11,6 @@ export default function BookDetailsPage() {
     return <div>Book not found.</div>;
   }
 
-  const handleOnClose = () => {
-    router.push("/");
-  };
-
   return (
     <div>
       <BookDetails
