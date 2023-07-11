@@ -13,21 +13,7 @@ export default function BookDetailsPage() {
 
   return (
     <div>
-      <BookDetails
-        book={book}
-        // imageURL={book.imageURL}
-        // title={book.title}
-        // author={book.author}
-        // category={book.category}
-        // ISBN={book.ISBN}
-        // EAN={book.EAN}
-        // language={book.language}
-        // publication={book.publication}
-        // pagenumber={book.pagenumber}
-        // price={book.price}
-        // currencyCode={book.currencyCode}
-        // description={book.description}
-      />
+      <BookDetails book={book} />
     </div>
   );
 }
