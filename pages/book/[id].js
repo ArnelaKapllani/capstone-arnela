@@ -1,6 +1,6 @@
 import { useRouter } from "next/router";
 import { books } from "../../lib/books.js";
-import BookDetails from "../../components/BookDetails/BookDetails.js";
+import BookDetails from "../../components/BookDetails/index.js";
 
 export default function BookDetailsPage() {
   const router = useRouter();

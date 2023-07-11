@@ -1,9 +1,9 @@
 import Image from "next/image";
 import Link from "next/link";
-import { StyledDetailsPage } from "./BookDetails.style";
-import { StyledImage } from "./BookDetails.style";
-import { StyledListDetails } from "./BookDetails.style";
-import { StyledDescription } from "./BookDetails.style";
+import { StyledDetailsPage } from "./style";
+import { StyledImage } from "./style";
+import { StyledListDetails } from "./style";
+import { StyledDescription } from "./style";
 
 export default function BookDetails({ book }) {
   const bookDetails = [
