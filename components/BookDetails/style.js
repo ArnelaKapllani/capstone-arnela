@@ -6,11 +6,23 @@ export const StyledDetailsPage = styled.div`
   margin-bottom: 20px;
 `;
 
+export const StyledFrame = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  width: 150px;
+  height: 220px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+`;
+
 export const StyledImage = styled.image`
-  flex-shrink: 0;
-  margin-right: 20px;
-  padding-top: 25px;
-  padding-left: 25px;
+  max-width: 100%;
+  max-height: 100%;
+  border-radius: 4px;
 `;
 
 export const StyledListDetails = styled.details`
@@ -23,7 +35,7 @@ export const StyledListDetails = styled.details`
   line-height: 1.8;
 `;
 
-export const StyledDescription = styled.div`
+export const StyledDescription = styled.p`
   padding-left: 25px;
   padding-right: 25px;
   font-size: 14px;

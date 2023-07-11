@@ -4,6 +4,7 @@ import { StyledDetailsPage } from "./style";
 import { StyledImage } from "./style";
 import { StyledListDetails } from "./style";
 import { StyledDescription } from "./style";
+import { StyledFrame } from "./style";
 
 export default function BookDetails({ book }) {
   const bookDetails = [
@@ -21,14 +22,18 @@ export default function BookDetails({ book }) {
   return (
     <>
       <StyledDetailsPage>
-        <StyledImage>
-          <Image
-            src={book.imageURL}
-            alt={book.title}
-            width={300}
-            height={400}
-          />
-        </StyledImage>
+        <StyledFrame>
+          <div>
+            <StyledImage>
+              <Image
+                src={book.imageURL}
+                alt={book.title}
+                width={book.dimensions.width}
+                height={book.dimensions.height}
+              />
+            </StyledImage>
+          </div>
+        </StyledFrame>
         <StyledListDetails>
           <ul>
             {bookDetails.map((detail) => (
