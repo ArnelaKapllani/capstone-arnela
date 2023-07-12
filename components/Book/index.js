@@ -8,14 +8,12 @@ export default function Book({ book }) {
   return (
     <StyledFrame>
       <div>
-        <StyledImage>
-          <Image
-            src={imageURL}
-            alt={title}
-            width={dimensions.width}
-            height={dimensions.height}
-          />
-        </StyledImage>
+        <StyledImage
+          src={imageURL}
+          alt={title}
+          width={dimensions.width}
+          height={dimensions.height}
+        ></StyledImage>
       </div>
     </StyledFrame>
   );

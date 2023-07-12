@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import Image from "next/image";
 
 export const StyledDetailsPage = styled.div`
   display: flex;
@@ -19,7 +20,7 @@ export const StyledFrame = styled.div`
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
 `;
 
-export const StyledImage = styled.image`
+export const StyledImage = styled(Image)`
   max-width: 100%;
   max-height: 100%;
   border-radius: 4px;

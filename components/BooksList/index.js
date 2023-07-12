@@ -16,9 +16,11 @@ export default function BooksList() {
       <h2>List of Books:</h2>
       <StyledList>
         {books.map((book) => (
-          <Link href={`/book/${book.id}`} key={book.id}>
-            <Book book={book} />
-          </Link>
+          <li key={book.id}>
+            <Link href={`/book/${book.id}`} key={book.id}>
+              <Book book={book} />
+            </Link>
+          </li>
         ))}
       </StyledList>
     </>

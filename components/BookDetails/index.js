@@ -24,14 +24,12 @@ export default function BookDetails({ book }) {
       <StyledDetailsPage>
         <StyledFrame>
           <div>
-            <StyledImage>
-              <Image
-                src={book.imageURL}
-                alt={book.title}
-                width={book.dimensions.width}
-                height={book.dimensions.height}
-              />
-            </StyledImage>
+            <StyledImage
+              src={book.imageURL}
+              alt={book.title}
+              width={book.dimensions.width}
+              height={book.dimensions.height}
+            ></StyledImage>
           </div>
         </StyledFrame>
         <StyledListDetails>
