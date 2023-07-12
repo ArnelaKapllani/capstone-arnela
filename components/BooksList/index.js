@@ -1,24 +1,17 @@
-import Book from "../Book/index.js";
+import BookImage from "../BookImage/index.js";
+import { StyledList } from "./style.js";
 import { books } from "../../lib/books.js";
-import styled from "styled-components";
 import Link from "next/link";
-
-const StyledList = styled.div`
-  display: grid;
-  gap: 20px;
-  padding-bottom: 25px;
-  padding-left: 25px;
-`;
 
 export default function BooksList() {
   return (
     <>
       <h2>List of Books:</h2>
-      <StyledList>
+      <StyledList role="list">
         {books.map((book) => (
           <li key={book.id}>
             <Link href={`/book/${book.id}`} key={book.id}>
-              <Book book={book} />
+              <BookImage book={book} />
             </Link>
           </li>
         ))}

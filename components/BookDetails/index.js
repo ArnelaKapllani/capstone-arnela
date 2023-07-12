@@ -1,10 +1,8 @@
-import Image from "next/image";
 import Link from "next/link";
-import { StyledDetailsPage } from "./style";
-import { StyledImage } from "./style";
+import { StyledDetailsWrapper } from "./style";
 import { StyledListDetails } from "./style";
 import { StyledDescription } from "./style";
-import { StyledFrame } from "./style";
+import BookImage from "../BookImage";
 
 export default function BookDetails({ book }) {
   const bookDetails = [
@@ -21,17 +19,8 @@ export default function BookDetails({ book }) {
 
   return (
     <>
-      <StyledDetailsPage>
-        <StyledFrame>
-          <div>
-            <StyledImage
-              src={book.imageURL}
-              alt={book.title}
-              width={book.dimensions.width}
-              height={book.dimensions.height}
-            ></StyledImage>
-          </div>
-        </StyledFrame>
+      <StyledDetailsWrapper>
+        <BookImage book={book} />
         <StyledListDetails>
           <ul>
             {bookDetails.map((detail) => (
@@ -44,7 +33,7 @@ export default function BookDetails({ book }) {
         <button>
           <Link href="/">X</Link>
         </button>
-      </StyledDetailsPage>
+      </StyledDetailsWrapper>
       <StyledDescription>
         <h4>Description:</h4>
         <p>{book.description}</p>

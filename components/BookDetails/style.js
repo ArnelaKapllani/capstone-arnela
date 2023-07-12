@@ -1,7 +1,6 @@
 import styled from "styled-components";
-import Image from "next/image";
 
-export const StyledDetailsPage = styled.div`
+export const StyledDetailsWrapper = styled.div`
   display: flex;
   align-items: flex-start;
   margin-bottom: 20px;
@@ -20,12 +19,6 @@ export const StyledFrame = styled.div`
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
 `;
 
-export const StyledImage = styled(Image)`
-  max-width: 100%;
-  max-height: 100%;
-  border-radius: 4px;
-`;
-
 export const StyledListDetails = styled.details`
   padding-top: 30px;
   flex-grow: 1;
@@ -36,7 +29,7 @@ export const StyledListDetails = styled.details`
   line-height: 1.8;
 `;
 
-export const StyledDescription = styled.p`
+export const StyledDescription = styled.article`
   padding-left: 25px;
   padding-right: 25px;
   font-size: 14px;
