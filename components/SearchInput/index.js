@@ -12,24 +12,24 @@ export default function SearchInput() {
   const [searchResults, setSearchResults] = useState([]);
   const [isSearchClicked, setIsSearchClicked] = useState(false);
 
-  const handleInputChange = (e) => {
-    const query = e.target.value;
+  function handleInputChange(event) {
+    const query = event.target.value;
     setSearchQuery(query);
 
     if (query === "") {
       setIsSearchClicked(false);
       setSearchResults([]);
     }
-  };
+  }
 
-  const handleSearchClick = () => {
+  function handleSearchClick() {
     setIsSearchClicked(true);
 
     const filteredBooks = books.filter((book) =>
       book.title.toLowerCase().includes(searchQuery.toLowerCase())
     );
     setSearchResults(filteredBooks);
-  };
+  }
 
   return (
     <StyledSearchContainer>
