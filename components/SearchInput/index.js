@@ -10,17 +10,21 @@ import { StyledSearchContainer } from "./style.js";
 export default function SearchInput() {
   const [searchQuery, setSearchQuery] = useState("");
   const [searchResults, setSearchResults] = useState([]);
+  const [isSearchClicked, setIsSearchClicked] = useState(false);
 
   const handleInputChange = (e) => {
     const query = e.target.value;
     setSearchQuery(query);
 
     if (query === "") {
+      setIsSearchClicked(false);
       setSearchResults([]);
     }
   };
 
   const handleSearchClick = () => {
+    setIsSearchClicked(true);
+
     const filteredBooks = books.filter((book) =>
       book.title.toLowerCase().includes(searchQuery.toLowerCase())
     );
@@ -39,20 +43,19 @@ export default function SearchInput() {
         <Icon path={mdiMagnify} size={1} />
       </button>
       <ul>
-        {searchQuery &&
-          (searchResults.length === 0 ? (
-            <li>Book not found</li>
-          ) : (
-            searchResults.map((book) => (
-              <li key={book.id}>
-                <BookImage book={book} />
-                {book.price}
-                {book.currencyCode}
-                <BookmarkButton />
-                <ShoppingCartButton />
-              </li>
-            ))
-          ))}
+        {isSearchClicked && searchResults.length === 0 ? (
+          <p style={{ color: "lightgrey" }}>... book not found :(</p>
+        ) : (
+          searchResults.map((book) => (
+            <li key={book.id}>
+              <BookImage book={book} />
+              {book.price}
+              {book.currencyCode}
+              <BookmarkButton />
+              <ShoppingCartButton />
+            </li>
+          ))
+        )}
       </ul>
     </StyledSearchContainer>
   );
