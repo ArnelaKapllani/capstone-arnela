@@ -40,14 +40,18 @@ export default function SearchInput() {
       </button>
       <ul>
         {searchQuery &&
-          searchResults.map((book) => (
-            <li key={book.id}>
-              <BookImage book={book} />
-              {book.price}
-              {book.currencyCode}
-              <BookmarkButton />
-              <ShoppingCartButton />
-            </li>
+          (searchResults.length === 0 ? (
+            <li>Book not found</li>
+          ) : (
+            searchResults.map((book) => (
+              <li key={book.id}>
+                <BookImage book={book} />
+                {book.price}
+                {book.currencyCode}
+                <BookmarkButton />
+                <ShoppingCartButton />
+              </li>
+            ))
           ))}
       </ul>
     </StyledSearchContainer>
