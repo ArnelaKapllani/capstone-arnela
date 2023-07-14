@@ -6,6 +6,7 @@ import { mdiMagnify } from "@mdi/js";
 import BookmarkButton from "../BookmarkButton/index.js";
 import ShoppingCartButton from "../ShoppingCartButton/index.js";
 import { StyledSearchContainer } from "./style.js";
+import { StyledSearchButton } from "./style.js";
 
 export default function SearchInput() {
   const [searchQuery, setSearchQuery] = useState("");
@@ -37,11 +38,11 @@ export default function SearchInput() {
         type="text"
         value={searchQuery}
         onChange={handleInputChange}
-        placeholder="Search..."
+        placeholder="      Search..."
       />
-      <button type="button" onClick={handleSearchClick}>
+      <StyledSearchButton type="button" onClick={handleSearchClick}>
         <Icon path={mdiMagnify} size={1} />
-      </button>
+      </StyledSearchButton>
       <ul>
         {isSearchClicked && searchResults.length === 0 ? (
           <p style={{ color: "lightgrey" }}>... book not found :(</p>
