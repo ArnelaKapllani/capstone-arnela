@@ -1,6 +1,11 @@
 import React, { useState } from "react";
 import { books } from "../../lib/books.js";
 import BookImage from "../BookImage";
+import Icon from "@mdi/react";
+import { mdiMagnify } from "@mdi/js";
+import BookmarkButton from "../BookmarkButton/index.js";
+import ShoppingCartButton from "../ShoppingCartButton/index.js";
+import { StyledSearchContainer } from "./style.js";
 
 export default function SearchInput() {
   const [searchQuery, setSearchQuery] = useState("");
@@ -23,7 +28,7 @@ export default function SearchInput() {
   };
 
   return (
-    <div>
+    <StyledSearchContainer>
       <input
         type="text"
         value={searchQuery}
@@ -31,7 +36,7 @@ export default function SearchInput() {
         placeholder="Search..."
       />
       <button type="button" onClick={handleSearchClick}>
-        Search
+        <Icon path={mdiMagnify} size={1} />
       </button>
       <ul>
         {searchQuery &&
@@ -40,9 +45,11 @@ export default function SearchInput() {
               <BookImage book={book} />
               {book.price}
               {book.currencyCode}
+              <BookmarkButton />
+              <ShoppingCartButton />
             </li>
           ))}
       </ul>
-    </div>
+    </StyledSearchContainer>
   );
 }
