@@ -1,7 +1,7 @@
 import BookImage from "../BookImage/index.js";
+import Link from "next/link";
 import { StyledList } from "./style.js";
 import { books } from "../../lib/books.js";
-import Link from "next/link";
 
 export default function BooksList() {
   return (
