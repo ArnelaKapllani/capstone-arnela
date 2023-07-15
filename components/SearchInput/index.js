@@ -1,12 +1,12 @@
 import React, { useState } from "react";
-import { books } from "../../lib/books.js";
+// import { books } from "../../lib/books.js";
 import BookImage from "../BookImage";
 import Icon from "@mdi/react";
-import { mdiMagnify } from "@mdi/js";
 import BookmarkButton from "../BookmarkButton/index.js";
 import ShoppingCartButton from "../ShoppingCartButton/index.js";
 import { StyledSearchContainer } from "./style.js";
 import { StyledSearchButton } from "./style.js";
+import { mdiMagnify } from "@mdi/js";
 
 export default function SearchInput() {
   const [searchQuery, setSearchQuery] = useState("");
@@ -45,7 +45,7 @@ export default function SearchInput() {
       </StyledSearchButton>
       <ul>
         {isSearchClicked && searchResults.length === 0 ? (
-          <p style={{ color: "lightgrey" }}>... book not found :(</p>
+          <h3 style={{ color: "lightgrey" }}>... book not found :(</h3>
         ) : (
           searchResults.map((book) => (
             <li key={book.id}>
