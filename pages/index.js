@@ -1,5 +1,12 @@
 import BookList from "../components/BooksList/index.js";
+import Layout from "../components/Layout/index.js";
 
 export default function HomePage() {
-  return <BookList />;
+  return (
+    <>
+      <Layout>
+        <BookList />
+      </Layout>
+    </>
+  );
 }

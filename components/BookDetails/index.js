@@ -1,8 +1,11 @@
 import Link from "next/link";
-import { StyledDetailsWrapper } from "./style";
-import { StyledListDetails } from "./style";
-import { StyledDescription } from "./style";
 import BookImage from "../BookImage";
+import {
+  StyledDetailsWrapper,
+  StyledListDetails,
+  StyledDescription,
+  StyledButton,
+} from "./style";
 
 export default function BookDetails({ book }) {
   const bookDetails = [
@@ -30,14 +33,14 @@ export default function BookDetails({ book }) {
             ))}
           </ul>
         </StyledListDetails>
-        <button>
-          <Link href="/">X</Link>
-        </button>
+        <StyledDescription>
+          <h4>Description:</h4>
+          <p>{book.description}</p>
+        </StyledDescription>
       </StyledDetailsWrapper>
-      <StyledDescription>
-        <h4>Description:</h4>
-        <p>{book.description}</p>
-      </StyledDescription>
+      <StyledButton>
+        <Link href="/">X</Link>
+      </StyledButton>
     </>
   );
 }
