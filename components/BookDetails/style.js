@@ -2,8 +2,9 @@ import styled from "styled-components";
 
 export const StyledDetailsWrapper = styled.div`
   display: flex;
-  align-items: flex-start;
-  margin-bottom: 20px;
+  position: relative;
+  padding: 100px 60px 20px;
+  flex-direction: column;
 `;
 
 export const StyledFrame = styled.div`
@@ -30,8 +31,12 @@ export const StyledListDetails = styled.details`
 `;
 
 export const StyledDescription = styled.article`
-  padding-left: 25px;
-  padding-right: 25px;
   font-size: 14px;
   line-height: 1.4;
+`;
+
+export const StyledButton = styled.button`
+  position: fixed;
+  top: 20px;
+  right: 20px;
 `;

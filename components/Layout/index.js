@@ -1,12 +1,14 @@
 import Header from "../Header";
-import NavBar from "../NavBar";
+import NavigationBar from "../NavigationBar";
+import ThemeToggle from "../ThemeToggle";
 
 export default function Layout({ children }) {
   return (
-    <div>
+    <>
       <Header />
       <main>{children}</main>
-      <NavBar />
-    </div>
+      <NavigationBar />
+      <ThemeToggle />
+    </>
   );
 }

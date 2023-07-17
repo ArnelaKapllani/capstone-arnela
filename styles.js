@@ -10,11 +10,18 @@ export default createGlobalStyle`
   body {
     margin: 0;
     font-family: system-ui;
-    transition: background-color 0.3s ease;
+    background-color: var(--primary-color);
+    color: #000000;
+    transition: background-color 0.9s ease;
   }
 
   .dark-mode {
     background-color: #222;
     color: #fff;
+  }
+
+  :root {
+    --primary-color: #f2f2f2;
+    --secondary-color: #e71711;
   }
 `;

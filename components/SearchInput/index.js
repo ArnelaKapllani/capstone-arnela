@@ -1,10 +1,10 @@
-import React, { useState } from "react";
-// import { books } from "../../lib/books.js";
 import BookImage from "../BookImage";
 import Icon from "@mdi/react";
 import BookmarkButton from "../BookmarkButton/index.js";
 import ShoppingCartButton from "../ShoppingCartButton/index.js";
-import { StyledSearchContainer } from "./style.js";
+import React, { useState } from "react";
+import { books } from "../../lib/books.js";
+import { StyledSearchContainer, StyledSearchInput } from "./style.js";
 import { StyledSearchButton } from "./style.js";
 import { mdiMagnify } from "@mdi/js";
 
@@ -34,11 +34,11 @@ export default function SearchInput() {
 
   return (
     <StyledSearchContainer>
-      <input
+      <StyledSearchInput
         type="text"
         value={searchQuery}
         onChange={handleInputChange}
-        placeholder="      Search..."
+        placeholder="Search..."
       />
       <StyledSearchButton type="button" onClick={handleSearchClick}>
         <Icon path={mdiMagnify} size={1} />
