@@ -23,7 +23,7 @@ export default function NavigationBar() {
           <Icon path={mdiBookmarkOutline} size={1} />
           Bookmark
         </StyledIcon>
-        <StyledIcon href="" area-label="see shopping cart">
+        <StyledIcon href="/shopping-cart" area-label="see shopping cart">
           <Icon path={mdiBasketOutline} size={1} />
           Shopping Cart
         </StyledIcon>
