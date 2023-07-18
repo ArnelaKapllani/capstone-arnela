@@ -1,12 +1,11 @@
 import Layout from "../../components/Layout/index.js";
 import ShoppingCart from "../../components/ShoppingCart/index.js";
 
-export default function ShoppingCartPage({ cartItems }) {
+export default function ShoppingCartPage({ cartItems, handleDelete }) {
   return (
     <>
-      <Layout>
-        <ShoppingCart cartItems={cartItems} />
-      </Layout>
+      <Layout cartItems={cartItems} />
+      <ShoppingCart cartItems={cartItems} handleDelete={handleDelete} />
     </>
   );
 }
