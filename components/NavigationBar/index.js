@@ -25,9 +25,7 @@ export default function NavigationBar({ cartItems }) {
         </StyledIcon>
         <StyledIcon href="/shopping-cart" aria-label="see shopping cart">
           <Icon path={mdiBasketOutline} size={1} />
-          {cartItems.length > 0 && (
-            <span className="cart-alert">{cartItems.length}</span>
-          )}
+          {cartItems.length > 0 && <span>{cartItems.length}</span>}
           Shopping Cart
         </StyledIcon>
       </NavBar>
