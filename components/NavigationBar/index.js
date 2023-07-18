@@ -11,19 +11,19 @@ export default function NavigationBar({ cartItems }) {
   return (
     <footer>
       <NavBar>
-        <StyledIcon href="/" area-label="see book list">
+        <StyledIcon href="/" aria-label="see book list">
           <Icon path={mdiBookOpenPageVariantOutline} size={1} />
           For me
         </StyledIcon>
-        <StyledIcon href="/search" area-label="search a book">
+        <StyledIcon href="/search" aria-label="search a book">
           <Icon path={mdiMagnify} size={1} />
           Search
         </StyledIcon>
-        <StyledIcon href="" area-label="see bookmarked books">
+        <StyledIcon href="" aria-label="see bookmarked books">
           <Icon path={mdiBookmarkOutline} size={1} />
           Bookmark
         </StyledIcon>
-        <StyledIcon href="/shopping-cart" area-label="see shopping cart">
+        <StyledIcon href="/shopping-cart" aria-label="see shopping cart">
           <Icon path={mdiBasketOutline} size={1} />
           {cartItems.length > 0 && (
             <span className="cart-alert">{cartItems.length}</span>
