@@ -22,8 +22,6 @@ export default function App({ Component, pageProps }) {
         addToCart={addToCart}
         cartItems={cartItems}
       />
-      {/* <SearchInput addToCart={addToCart} />
-      <ShoppingCart cartItems={cartItems} /> */}
     </>
   );
 }

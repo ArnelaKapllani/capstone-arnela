@@ -5,8 +5,6 @@ import DropdownButton from "../DropdownButton";
 import DeleteButton from "../DeleteButton";
 
 export default function ShoppingCart({ cartItems }) {
-  //   const [cartItems, setCartItems] = useState([]);
-
   return (
     <>
       <h1>My cart</h1>
