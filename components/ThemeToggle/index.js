@@ -1,5 +1,6 @@
 import Icon from "@mdi/react";
-import { useState, useEffect } from "react";
+import useLocalStorageState from "use-local-storage-state";
+import { useEffect } from "react";
 import { mdiWhiteBalanceSunny } from "@mdi/js";
 import { mdiMoonWaningCrescent } from "@mdi/js";
 import { styled } from "styled-components";
@@ -15,26 +16,18 @@ const StyledButton = styled.button`
 `;
 
 export default function ThemeToggle() {
-  const isBrowser = typeof window !== "undefined";
-  const storedDarkMode = isBrowser
-    ? localStorage.getItem("darkMode") === "true"
-    : false;
-  const [darkMode, setDarkMode] = useState(storedDarkMode);
+  const [darkMode, setDarkMode] = useLocalStorageState("darkMode", false);
 
   useEffect(() => {
-    if (isBrowser) {
-      if (darkMode) {
-        document.body.classList.add("dark-mode");
-        localStorage.setItem("darkMode", true);
-      } else {
-        document.body.classList.remove("dark-mode");
-        localStorage.setItem("darkMode", false);
-      }
+    if (darkMode) {
+      document.body.classList.add("dark-mode");
+    } else {
+      document.body.classList.remove("dark-mode");
     }
-  }, [darkMode, isBrowser]);
+  }, [darkMode]);
 
   function toggleTheme() {
-    setDarkMode(!darkMode);
+    setDarkMode((prevDarkMode) => !prevDarkMode);
   }
 
   return (
