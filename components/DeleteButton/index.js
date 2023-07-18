@@ -4,7 +4,6 @@ import { mdiDeleteOutline } from "@mdi/js";
 export default function DeleteButton({ book, onDelete }) {
   function handleDelete() {
     onDelete(book);
-    console.log("test");
   }
   return (
     <>
