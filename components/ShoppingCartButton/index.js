@@ -2,9 +2,9 @@ import React, { useState } from "react";
 import Icon from "@mdi/react";
 import { mdiBasketOutline } from "@mdi/js";
 
-export default function ShoppingCartButton({ books, addToCart }) {
+export default function ShoppingCartButton({ book, addToCart }) {
   const handleAddToCart = () => {
-    addToCart(books);
+    addToCart(book);
   };
   return (
     <>
