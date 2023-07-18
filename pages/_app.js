@@ -1,7 +1,5 @@
 import GlobalStyle from "../styles";
 import { useState } from "react";
-import SearchInput from "../components/SearchInput/index.js";
-import ShoppingCart from "../components/ShoppingCart/index.js";
 import { books } from "../lib/books.js";
 
 export default function App({ Component, pageProps }) {
@@ -9,9 +7,13 @@ export default function App({ Component, pageProps }) {
 
   const addToCart = (book) => {
     const updateCartItems = [...cartItems, book];
-    console.log(updateCartItems);
     setCartItems(updateCartItems);
   };
+
+  function handleDelete(book) {
+    const updatedCartItems = cartItems.filter((item) => item.id !== book.id);
+    setCartItems(updatedCartItems);
+  }
 
   return (
     <>
@@ -19,8 +21,9 @@ export default function App({ Component, pageProps }) {
       <Component
         {...pageProps}
         books={books}
-        addToCart={addToCart}
         cartItems={cartItems}
+        addToCart={addToCart}
+        handleDelete={handleDelete}
       />
     </>
   );
