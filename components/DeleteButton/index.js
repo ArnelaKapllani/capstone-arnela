@@ -1,7 +1,16 @@
-export default function DeleteButton() {
+import Icon from "@mdi/react";
+import { mdiDeleteOutline } from "@mdi/js";
+
+export default function DeleteButton({ book, onDelete }) {
+  function handleDelete() {
+    onDelete(book);
+    console.log("test");
+  }
   return (
     <>
-      <button type="button">Delete</button>
+      <button type="button" onClick={handleDelete}>
+        <Icon path={mdiDeleteOutline} size={1} />
+      </button>
     </>
   );
 }
