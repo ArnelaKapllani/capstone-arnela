@@ -7,7 +7,7 @@ import {
   mdiBasketOutline,
 } from "@mdi/js";
 
-export default function NavigationBar() {
+export default function NavigationBar({ cartItems }) {
   return (
     <footer>
       <NavBar>
@@ -25,6 +25,9 @@ export default function NavigationBar() {
         </StyledIcon>
         <StyledIcon href="/shopping-cart" area-label="see shopping cart">
           <Icon path={mdiBasketOutline} size={1} />
+          {cartItems.length > 0 && (
+            <span className="cart-alert">{cartItems.length}</span>
+          )}
           Shopping Cart
         </StyledIcon>
       </NavBar>
