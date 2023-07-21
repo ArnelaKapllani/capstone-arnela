@@ -1,10 +1,7 @@
 import { StyledHeader, StyledTitle, Quote } from "./style.js";
 import ThemeToggle from "../ThemeToggle/index.js";
-import { useState } from "react";
 
 export default function Header() {
-  const [darkMode, setDarkMode] = useState(false);
-
   return (
     <StyledHeader>
       <ThemeToggle />

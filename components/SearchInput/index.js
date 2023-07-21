@@ -8,7 +8,7 @@ import { StyledSearchContainer, StyledSearchInput } from "./style.js";
 import { StyledSearchButton } from "./style.js";
 import { mdiMagnify } from "@mdi/js";
 
-export default function SearchInput() {
+export default function SearchInput({ addToCart }) {
   const [searchQuery, setSearchQuery] = useState("");
   const [searchResults, setSearchResults] = useState([]);
   const [isSearchClicked, setIsSearchClicked] = useState(false);
@@ -53,7 +53,7 @@ export default function SearchInput() {
               {book.price}
               {book.currencyCode}
               <BookmarkButton />
-              <ShoppingCartButton />
+              <ShoppingCartButton book={book} addToCart={addToCart} />
             </li>
           ))
         )}

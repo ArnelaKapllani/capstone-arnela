@@ -1,12 +1,11 @@
 import BookList from "../components/BooksList/index.js";
 import Layout from "../components/Layout/index.js";
 
-export default function HomePage() {
+export default function HomePage({ cartItems }) {
   return (
     <>
-      <Layout>
-        <BookList />
-      </Layout>
+      <Layout cartItems={cartItems} />
+      <BookList />
     </>
   );
 }
