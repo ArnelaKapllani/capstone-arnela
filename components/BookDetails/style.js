@@ -34,9 +34,3 @@ export const StyledDescription = styled.article`
   font-size: 14px;
   line-height: 1.4;
 `;
-
-export const StyledButton = styled.button`
-  position: fixed;
-  top: 20px;
-  right: 20px;
-`;

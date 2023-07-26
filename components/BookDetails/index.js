@@ -1,13 +1,12 @@
-import Link from "next/link";
 import BookImage from "../BookImage";
 import {
   StyledDetailsWrapper,
   StyledListDetails,
   StyledDescription,
-  StyledButton,
 } from "./style";
 import ShoppingCartButton from "../ShoppingCartButton/index.js";
 import BookmarkButton from "../BookmarkButton/index.js";
+import CloseButton from "../CloseButton";
 
 export default function BookDetails({
   book,
@@ -50,9 +49,7 @@ export default function BookDetails({
           <p>{book.description}</p>
         </StyledDescription>
       </StyledDetailsWrapper>
-      <StyledButton>
-        <Link href="/">X</Link>
-      </StyledButton>
+      <CloseButton />
     </>
   );
 }
