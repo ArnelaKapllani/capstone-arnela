@@ -43,12 +43,6 @@ export default function App({ Component, pageProps }) {
     });
   }
 
-  function addToBookmarks(bookId) {
-    if (!bookmarks.includes(bookId)) {
-      setBookmarks((prevBookmarks) => [...prevBookmarks, bookId]);
-    }
-  }
-
   return (
     <>
       <GlobalStyle />
@@ -61,7 +55,6 @@ export default function App({ Component, pageProps }) {
         removeFromCart={removeFromCart}
         bookmarks={bookmarks}
         toggleBookmark={toggleBookmark}
-        addToBookmarks={addToBookmarks}
       />
     </>
   );
