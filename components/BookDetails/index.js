@@ -9,7 +9,12 @@ import {
 import ShoppingCartButton from "../ShoppingCartButton/index.js";
 import BookmarkButton from "../BookmarkButton/index.js";
 
-export default function BookDetails({ book, addToCart }) {
+export default function BookDetails({
+  book,
+  addToCart,
+  toggleBookmark,
+  bookmarks,
+}) {
   const bookDetails = [
     { label: "Title", value: book.title },
     { label: "Author", value: book.author },
@@ -27,7 +32,10 @@ export default function BookDetails({ book, addToCart }) {
       <StyledDetailsWrapper>
         <BookImage book={book} />
         <ShoppingCartButton book={book} addToCart={addToCart} />
-        <BookmarkButton />
+        <BookmarkButton
+          isBookmarked={bookmarks.includes(book.id)}
+          onClick={() => toggleBookmark(book.id)}
+        />
         <StyledListDetails>
           <ul>
             {bookDetails.map((detail) => (

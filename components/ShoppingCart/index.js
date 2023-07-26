@@ -9,6 +9,8 @@ export default function ShoppingCart({
   cartItems,
   removeFromCart,
   setCartItems,
+  bookmarks,
+  toggleBookmark,
 }) {
   const [totalPrice, setTotalPrice] = useState(0);
 
@@ -60,7 +62,10 @@ export default function ShoppingCart({
                 updateQuantityAndPrice={updateQuantityAndPrice}
               />
               <DeleteButton book={book} onDelete={removeFromCart} />
-              <BookmarkButton />
+              <BookmarkButton
+                isBookmarked={bookmarks.includes(book.id)}
+                onClick={() => toggleBookmark(book.id)}
+              />
             </div>
           );
         })

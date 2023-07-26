@@ -5,6 +5,8 @@ export default function ShoppingCartPage({
   cartItems,
   removeFromCart,
   setCartItems,
+  bookmarks,
+  toggleBookmark,
 }) {
   return (
     <>
@@ -13,6 +15,8 @@ export default function ShoppingCartPage({
         cartItems={cartItems}
         removeFromCart={removeFromCart}
         setCartItems={setCartItems}
+        bookmarks={bookmarks}
+        toggleBookmark={toggleBookmark}
       />
     </>
   );

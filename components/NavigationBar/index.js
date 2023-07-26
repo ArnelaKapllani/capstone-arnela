@@ -29,7 +29,7 @@ export default function NavigationBar({ cartItems }) {
           <Icon path={mdiMagnify} size={1} />
           Search
         </StyledIcon>
-        <StyledIcon href="" aria-label="see bookmarked books">
+        <StyledIcon href="/bookmarked" aria-label="see bookmarked books">
           <Icon path={mdiBookmarkOutline} size={1} />
           Bookmark
         </StyledIcon>

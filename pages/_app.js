@@ -4,6 +4,7 @@ import { books } from "../lib/books.js";
 
 export default function App({ Component, pageProps }) {
   const [cartItems, setCartItems] = useState([]);
+  const [bookmarks, setBookmarks] = useState([]);
 
   function addToCart(bookId) {
     const existigCartItem = cartItems.find(
@@ -31,6 +32,23 @@ export default function App({ Component, pageProps }) {
     setCartItems(cartItems.filter((cartItem) => cartItem.bookId !== bookId));
   }
 
+  function toggleBookmark(bookId) {
+    setBookmarks((prevBookmarks) => {
+      const isBookmarked = prevBookmarks.includes(bookId);
+      if (isBookmarked) {
+        return prevBookmarks.filter((id) => id !== bookId);
+      } else {
+        return [...prevBookmarks, bookId];
+      }
+    });
+  }
+
+  function addToBookmarks(bookId) {
+    if (!bookmarks.includes(bookId)) {
+      setBookmarks((prevBookmarks) => [...prevBookmarks, bookId]);
+    }
+  }
+
   return (
     <>
       <GlobalStyle />
@@ -41,6 +59,9 @@ export default function App({ Component, pageProps }) {
         setCartItems={setCartItems}
         addToCart={addToCart}
         removeFromCart={removeFromCart}
+        bookmarks={bookmarks}
+        toggleBookmark={toggleBookmark}
+        addToBookmarks={addToBookmarks}
       />
     </>
   );

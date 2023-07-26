@@ -2,7 +2,11 @@ import { useRouter } from "next/router";
 import { books } from "../../lib/books.js";
 import BookDetails from "../../components/BookDetails/index.js";
 
-export default function BookDetailsPage({ addToCart }) {
+export default function BookDetailsPage({
+  addToCart,
+  toggleBookmark,
+  bookmarks,
+}) {
   const router = useRouter();
   const { id } = router.query;
   const book = books.find((book) => book.id === id);
@@ -13,7 +17,12 @@ export default function BookDetailsPage({ addToCart }) {
 
   return (
     <div>
-      <BookDetails book={book} addToCart={addToCart} />
+      <BookDetails
+        book={book}
+        addToCart={addToCart}
+        toggleBookmark={toggleBookmark}
+        bookmarks={bookmarks}
+      />
     </div>
   );
 }
