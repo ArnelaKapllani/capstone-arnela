@@ -20,29 +20,44 @@ export default function SearchInput({ addToCart, bookmarks, toggleBookmark }) {
     if (query === "") {
       setIsSearchClicked(false);
       setSearchResults([]);
+    } else {
+      handleSearchClick();
     }
   }
 
   function handleSearchClick() {
     setIsSearchClicked(true);
 
-    const filteredBooks = books.filter((book) =>
-      book.title.toLowerCase().includes(searchQuery.toLowerCase())
-    );
-    setSearchResults(filteredBooks);
+    if (searchQuery.trim() === "") {
+      setSearchResults([]);
+    } else {
+      const filteredBooks = books.filter((book) =>
+        book.title.toLowerCase().includes(searchQuery.toLowerCase())
+      );
+      setSearchResults(filteredBooks);
+    }
+  }
+
+  function handleKeyPress(event) {
+    if (event.key === "Enter") {
+      handleSearchClick();
+    }
   }
 
   return (
-    <StyledSearchContainer>
-      <StyledSearchInput
-        type="text"
-        value={searchQuery}
-        onChange={handleInputChange}
-        placeholder="Search..."
-      />
-      <StyledSearchButton type="button" onClick={handleSearchClick}>
-        <Icon path={mdiMagnify} size={1} />
-      </StyledSearchButton>
+    <>
+      <StyledSearchContainer>
+        <StyledSearchInput
+          type="text"
+          value={searchQuery}
+          onChange={handleInputChange}
+          onKeyDown={handleKeyPress}
+          placeholder="Search..."
+        />
+        <StyledSearchButton type="button" onClick={handleSearchClick}>
+          <Icon path={mdiMagnify} size={1} />
+        </StyledSearchButton>
+      </StyledSearchContainer>
       <ul>
         {isSearchClicked && searchResults.length === 0 ? (
           <h3 style={{ color: "lightgrey" }}>... book not found :(</h3>
@@ -61,6 +76,6 @@ export default function SearchInput({ addToCart, bookmarks, toggleBookmark }) {
           ))
         )}
       </ul>
-    </StyledSearchContainer>
+    </>
   );
 }

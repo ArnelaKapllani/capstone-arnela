@@ -4,8 +4,9 @@ import Layout from "../components/Layout/index.js";
 export default function HomePage({ cartItems }) {
   return (
     <>
-      <Layout cartItems={cartItems} />
-      <BookList />
+      <Layout cartItems={cartItems}>
+        <BookList />
+      </Layout>
     </>
   );
 }

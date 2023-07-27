@@ -11,9 +11,8 @@ export const ListContainer = styled.div`
 
 export const StyledList = styled.ul`
   display: inline-flex;
-  gap: 15px;
   padding-bottom: 250px;
-  padding-left: 20px;
+  padding-left: 300px;
   list-style: none;
 `;
 

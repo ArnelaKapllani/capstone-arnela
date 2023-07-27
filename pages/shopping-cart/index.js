@@ -10,14 +10,15 @@ export default function ShoppingCartPage({
 }) {
   return (
     <>
-      <Layout cartItems={cartItems} />
-      <ShoppingCart
-        cartItems={cartItems}
-        removeFromCart={removeFromCart}
-        setCartItems={setCartItems}
-        bookmarks={bookmarks}
-        toggleBookmark={toggleBookmark}
-      />
+      <Layout cartItems={cartItems}>
+        <ShoppingCart
+          cartItems={cartItems}
+          removeFromCart={removeFromCart}
+          setCartItems={setCartItems}
+          bookmarks={bookmarks}
+          toggleBookmark={toggleBookmark}
+        />
+      </Layout>
     </>
   );
 }

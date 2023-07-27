@@ -5,10 +5,10 @@ export default createGlobalStyle`
   *::before,
   *::after {
     box-sizing: border-box;
+    
   }
 
   body {
-    margin-top: 100px;
     font-family: system-ui;
     background-color: var(--primary-color);
     color: #000000;

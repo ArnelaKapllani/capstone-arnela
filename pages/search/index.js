@@ -9,12 +9,13 @@ export default function SearchInputPage({
 }) {
   return (
     <>
-      <Layout cartItems={cartItems} />
-      <SearchInput
-        addToCart={addToCart}
-        bookmarks={bookmarks}
-        toggleBookmark={toggleBookmark}
-      />
+      <Layout cartItems={cartItems}>
+        <SearchInput
+          addToCart={addToCart}
+          bookmarks={bookmarks}
+          toggleBookmark={toggleBookmark}
+        />
+      </Layout>
     </>
   );
 }
