@@ -17,7 +17,12 @@ export const StyledFrame = styled.div`
   padding: 10px;
   border: 1px solid #ccc;
   border-radius: 5px;
-  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+  /* box-shadow: 0 0 5px rgba(0, 0, 0, 0.1); */
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0);
+  transition: box-shadow 0.3s ease;
+  :hover {
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+  }
 `;
 
 export const StyledListDetails = styled.details`
@@ -33,10 +38,4 @@ export const StyledListDetails = styled.details`
 export const StyledDescription = styled.article`
   font-size: 14px;
   line-height: 1.4;
-`;
-
-export const StyledButton = styled.button`
-  position: fixed;
-  top: 20px;
-  right: 20px;
 `;

@@ -8,7 +8,7 @@ import { StyledSearchContainer, StyledSearchInput } from "./style.js";
 import { StyledSearchButton } from "./style.js";
 import { mdiMagnify } from "@mdi/js";
 
-export default function SearchInput({ addToCart }) {
+export default function SearchInput({ addToCart, bookmarks, toggleBookmark }) {
   const [searchQuery, setSearchQuery] = useState("");
   const [searchResults, setSearchResults] = useState([]);
   const [isSearchClicked, setIsSearchClicked] = useState(false);
@@ -20,29 +20,44 @@ export default function SearchInput({ addToCart }) {
     if (query === "") {
       setIsSearchClicked(false);
       setSearchResults([]);
+    } else {
+      handleSearchClick();
     }
   }
 
   function handleSearchClick() {
     setIsSearchClicked(true);
 
-    const filteredBooks = books.filter((book) =>
-      book.title.toLowerCase().includes(searchQuery.toLowerCase())
-    );
-    setSearchResults(filteredBooks);
+    if (searchQuery.trim() === "") {
+      setSearchResults([]);
+    } else {
+      const filteredBooks = books.filter((book) =>
+        book.title.toLowerCase().includes(searchQuery.toLowerCase())
+      );
+      setSearchResults(filteredBooks);
+    }
+  }
+
+  function handleKeyPress(event) {
+    if (event.key === "Enter") {
+      handleSearchClick();
+    }
   }
 
   return (
-    <StyledSearchContainer>
-      <StyledSearchInput
-        type="text"
-        value={searchQuery}
-        onChange={handleInputChange}
-        placeholder="Search..."
-      />
-      <StyledSearchButton type="button" onClick={handleSearchClick}>
-        <Icon path={mdiMagnify} size={1} />
-      </StyledSearchButton>
+    <>
+      <StyledSearchContainer>
+        <StyledSearchInput
+          type="text"
+          value={searchQuery}
+          onChange={handleInputChange}
+          onKeyDown={handleKeyPress}
+          placeholder="Search..."
+        />
+        <StyledSearchButton type="button" onClick={handleSearchClick}>
+          <Icon path={mdiMagnify} size={1} />
+        </StyledSearchButton>
+      </StyledSearchContainer>
       <ul>
         {isSearchClicked && searchResults.length === 0 ? (
           <h3 style={{ color: "lightgrey" }}>... book not found :(</h3>
@@ -52,12 +67,15 @@ export default function SearchInput({ addToCart }) {
               <BookImage book={book} />
               {book.price}
               {book.currencyCode}
-              <BookmarkButton />
+              <BookmarkButton
+                isBookmarked={bookmarks.includes(book.id)}
+                onClick={() => toggleBookmark(book.id)}
+              />
               <ShoppingCartButton book={book} addToCart={addToCart} />
             </li>
           ))
         )}
       </ul>
-    </StyledSearchContainer>
+    </>
   );
 }

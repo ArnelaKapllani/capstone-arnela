@@ -1,27 +1,24 @@
 import styled from "styled-components";
 
 export const StyledSearchContainer = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
+  position: relative;
+  margin: 0 auto 0;
+  width: 300px;
 `;
 
 export const StyledSearchInput = styled.input`
-  display: flex;
-  align-items: center;
-  padding: 10px;
+  padding: 10px 35px 10px 10px;
   border: 1px solid #ccc;
   border-radius: 20px;
-  width: 350px;
+  width: 100%;
   height: 40px;
 `;
 
 export const StyledSearchButton = styled.button`
   background-color: transparent;
   border: none;
-  position: relative;
-  right: 40px;
-  bottom: 1px;
+  position: absolute;
+  right: 0;
+  top: 7px;
   color: grey;
 `;

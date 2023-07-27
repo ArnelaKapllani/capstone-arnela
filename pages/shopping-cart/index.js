@@ -5,15 +5,20 @@ export default function ShoppingCartPage({
   cartItems,
   removeFromCart,
   setCartItems,
+  bookmarks,
+  toggleBookmark,
 }) {
   return (
     <>
-      <Layout cartItems={cartItems} />
-      <ShoppingCart
-        cartItems={cartItems}
-        removeFromCart={removeFromCart}
-        setCartItems={setCartItems}
-      />
+      <Layout cartItems={cartItems}>
+        <ShoppingCart
+          cartItems={cartItems}
+          removeFromCart={removeFromCart}
+          setCartItems={setCartItems}
+          bookmarks={bookmarks}
+          toggleBookmark={toggleBookmark}
+        />
+      </Layout>
     </>
   );
 }

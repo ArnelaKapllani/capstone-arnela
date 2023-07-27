@@ -1,15 +1,19 @@
-import Link from "next/link";
 import BookImage from "../BookImage";
 import {
   StyledDetailsWrapper,
   StyledListDetails,
   StyledDescription,
-  StyledButton,
 } from "./style";
 import ShoppingCartButton from "../ShoppingCartButton/index.js";
 import BookmarkButton from "../BookmarkButton/index.js";
+import CloseButton from "../CloseButton";
 
-export default function BookDetails({ book, addToCart }) {
+export default function BookDetails({
+  book,
+  addToCart,
+  toggleBookmark,
+  bookmarks,
+}) {
   const bookDetails = [
     { label: "Title", value: book.title },
     { label: "Author", value: book.author },
@@ -27,7 +31,10 @@ export default function BookDetails({ book, addToCart }) {
       <StyledDetailsWrapper>
         <BookImage book={book} />
         <ShoppingCartButton book={book} addToCart={addToCart} />
-        <BookmarkButton />
+        <BookmarkButton
+          isBookmarked={bookmarks.includes(book.id)}
+          onClick={() => toggleBookmark(book.id)}
+        />
         <StyledListDetails>
           <ul>
             {bookDetails.map((detail) => (
@@ -42,9 +49,7 @@ export default function BookDetails({ book, addToCart }) {
           <p>{book.description}</p>
         </StyledDescription>
       </StyledDetailsWrapper>
-      <StyledButton>
-        <Link href="/">X</Link>
-      </StyledButton>
+      <CloseButton />
     </>
   );
 }
