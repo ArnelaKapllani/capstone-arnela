@@ -1,7 +1,9 @@
 import styled from "styled-components";
 
 export const Main = styled.main`
-  flex-grow: 1;
-  padding: 20px;
-  margin-top: 100px;
+  padding-top: 60px;
+  padding-bottom: 80px;
+  /* min-height: calc(100vh - 160px); */
+  overflow-y: scroll;
+  z-index: 1;
 `;
