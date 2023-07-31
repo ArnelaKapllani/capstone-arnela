@@ -3,6 +3,8 @@ import {
   StyledDetailsWrapper,
   StyledListDetails,
   StyledDescription,
+  StyledButtonsWrapper,
+  StyledImageContainer,
 } from "./style";
 import ShoppingCartButton from "../ShoppingCartButton/index.js";
 import BookmarkButton from "../BookmarkButton/index.js";
@@ -29,12 +31,16 @@ export default function BookDetails({
   return (
     <>
       <StyledDetailsWrapper>
-        <BookImage book={book} />
-        <ShoppingCartButton book={book} addToCart={addToCart} />
-        <BookmarkButton
-          isBookmarked={bookmarks.includes(book.id)}
-          onClick={() => toggleBookmark(book.id)}
-        />
+        <StyledImageContainer>
+          <BookImage book={book} />
+          <StyledButtonsWrapper>
+            <ShoppingCartButton book={book} addToCart={addToCart} />
+            <BookmarkButton
+              isBookmarked={bookmarks.includes(book.id)}
+              onClick={() => toggleBookmark(book.id)}
+            />
+          </StyledButtonsWrapper>
+        </StyledImageContainer>
         <StyledListDetails>
           <ul>
             {bookDetails.map((detail) => (
@@ -44,8 +50,8 @@ export default function BookDetails({
             ))}
           </ul>
         </StyledListDetails>
+        <h4>Description:</h4>
         <StyledDescription>
-          <h4>Description:</h4>
           <p>{book.description}</p>
         </StyledDescription>
       </StyledDetailsWrapper>

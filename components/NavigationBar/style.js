@@ -21,9 +21,19 @@ export const StyledIcon = styled(Link)`
   align-items: center;
   text-decoration: none;
   width: 25%;
-  color: #cbcaca;
-  :active {
-    color: #453f3f;
-  }
+  color: ${(props) => (props.active ? "#453f3f" : "#cbcaca")};
   font-size: 10px;
+  position: relative;
+`;
+
+export const Span = styled.span`
+  position: absolute;
+  top: -8px;
+  right: 18px;
+  background-color: var(--secondary-color);
+  font-size: 10px;
+  font-weight: 400;
+  border-radius: 100%;
+  padding: 5px;
+  color: var(--primary-color);
 `;

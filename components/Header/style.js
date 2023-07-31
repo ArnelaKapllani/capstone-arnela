@@ -1,4 +1,4 @@
-import { styled } from "styled-components";
+import styled from "styled-components";
 
 export const StyledHeader = styled.header`
   display: flex;
@@ -9,6 +9,7 @@ export const StyledHeader = styled.header`
   right: 0;
   background-color: var(--primary-color);
   padding: 15px 0;
+  z-index: 999;
 `;
 
 export const StyledTitle = styled.h1`

@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { DropdownSelect } from "./style.js";
 
 export default function DropdownButton({
   book,
@@ -18,12 +19,12 @@ export default function DropdownButton({
     updateQuantityAndPrice(book.id, newQuantity);
   }
   return (
-    <select value={selectedValue} onChange={handleSelectedChange}>
+    <DropdownSelect value={selectedValue} onChange={handleSelectedChange}>
       <option value={1}>1</option>
       <option value={2}>2</option>
       <option value={3}>3</option>
       <option value={4}>4</option>
       <option value={5}>5</option>
-    </select>
+    </DropdownSelect>
   );
 }

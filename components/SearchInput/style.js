@@ -4,6 +4,7 @@ export const StyledSearchContainer = styled.div`
   position: relative;
   margin: 0 auto 0;
   width: 300px;
+  padding-top: 50px;
 `;
 
 export const StyledSearchInput = styled.input`
@@ -19,6 +20,6 @@ export const StyledSearchButton = styled.button`
   border: none;
   position: absolute;
   right: 0;
-  top: 7px;
+  top: 57px;
   color: grey;
 `;

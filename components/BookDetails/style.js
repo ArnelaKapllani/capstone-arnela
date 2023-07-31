@@ -3,26 +3,24 @@ import styled from "styled-components";
 export const StyledDetailsWrapper = styled.div`
   display: flex;
   position: relative;
-  padding: 100px 60px 20px;
+  padding: 50px 30px;
   flex-direction: column;
 `;
 
-export const StyledFrame = styled.div`
+export const StyledImageContainer = styled.div`
   display: flex;
-  justify-content: center;
   align-items: center;
-  position: relative;
-  width: 150px;
-  height: 220px;
-  padding: 10px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  /* box-shadow: 0 0 5px rgba(0, 0, 0, 0.1); */
-  box-shadow: 0 0 5px rgba(0, 0, 0, 0);
-  transition: box-shadow 0.3s ease;
-  :hover {
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
-  }
+  gap: 10px;
+  z-index: 1;
+`;
+
+export const StyledButtonsWrapper = styled.div`
+  display: flex;
+  flex-direction: row;
+  gap: 5px;
+  padding: 5px;
+  min-width: fit-content;
+  margin: 5px;
 `;
 
 export const StyledListDetails = styled.details`
@@ -38,4 +36,6 @@ export const StyledListDetails = styled.details`
 export const StyledDescription = styled.article`
   font-size: 14px;
   line-height: 1.4;
+  max-height: 200px;
+  overflow: auto;
 `;

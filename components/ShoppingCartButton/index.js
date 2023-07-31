@@ -1,14 +1,30 @@
 import Icon from "@mdi/react";
+import styled from "styled-components";
 import { mdiBasketOutline } from "@mdi/js";
 import { useState } from "react";
-import styled from "styled-components";
+import { StyledButton } from "../StyledButton/style";
 
-const StyledAlert = styled.p`
-  background-color: red;
+const StyledAlert = styled.div`
+  background-color: #ebe9e9;
   color: #333;
   padding: 10px;
   border-radius: 4px;
-  margin-top: 10px;
+  position: fixed;
+  bottom: 70px;
+  right: 20px;
+  z-index: 999;
+  opacity: ${(props) => (props.$show ? 1 : 0)};
+  visibility: ${(props) => (props.$show ? "visible" : "hidden")};
+  transition: opacity 0.3s, visibility 0s;
+  &::before {
+    content: "";
+    position: absolute;
+    top: 100%;
+    right: 16px;
+    border-width: 8px;
+    border-style: solid;
+    border-color: #ebe9e9 transparent transparent transparent;
+  }
 `;
 
 export default function ShoppingCartButton({ book, addToCart, selectedValue }) {
@@ -36,10 +52,14 @@ export default function ShoppingCartButton({ book, addToCart, selectedValue }) {
 
   return (
     <>
-      <button type="button" onClick={handleClick}>
-        <Icon path={mdiBasketOutline} size={1} />
-      </button>
-      {showAlert && <StyledAlert>Added to the cart!</StyledAlert>}
+      <StyledButton type="button" onClick={handleClick}>
+        <Icon path={mdiBasketOutline} size={0.8} />
+      </StyledButton>
+      {showAlert && (
+        <StyledAlert $show="true">
+          The item has been added to your cart.
+        </StyledAlert>
+      )}
     </>
   );
 }

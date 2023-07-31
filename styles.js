@@ -13,6 +13,7 @@ export default createGlobalStyle`
     background-color: var(--primary-color);
     color: #000000;
     transition: background-color 0.9s ease;
+    margin: 0;
   }
 
   .dark-mode {

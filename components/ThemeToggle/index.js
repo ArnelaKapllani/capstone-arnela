@@ -1,9 +1,9 @@
 import Icon from "@mdi/react";
+import styled from "styled-components";
 import useLocalStorageState from "use-local-storage-state";
 import { useEffect } from "react";
 import { mdiWhiteBalanceSunny } from "@mdi/js";
 import { mdiMoonWaningCrescent } from "@mdi/js";
-import { styled } from "styled-components";
 
 const StyledButton = styled.button`
   position: fixed;
@@ -13,6 +13,7 @@ const StyledButton = styled.button`
   border: none;
   color: #453f3f;
   cursor: pointer;
+  background-color: transparent;
 `;
 
 export default function ThemeToggle() {
