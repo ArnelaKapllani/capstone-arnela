@@ -8,7 +8,7 @@
 
 You can find the hosted version on Vercel: [Demo Version of Capstone Project] (https://yourbook.vercel.app/)
 
-<!-- ![Alt Text](/public/yourbook_app_demo.mov) -->
+![Alt Text](/public/yourbook_app_demo.mov)
 
 **Important:** This demo is optimized for mobile screen.
 
