@@ -6,9 +6,7 @@
 
 ## Demo:
 
-You can find the hosted version on Vercel: [Demo Version of Capstone Project] (https://yourbook.vercel.app/)
-
-![Alt Text](/public/yourbook_app_demo.mov)
+You can find the hosted version on Vercel: [Demo Version of Capstone Project](https://yourbook.vercel.app/)
 
 **Important:** This demo is optimized for mobile screen.
 
