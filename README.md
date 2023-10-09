@@ -1,37 +1,31 @@
-# New Next Project
+# Capstone Project: YourBook
 
-This project was created from the neue fische `next` template.
+![YourBook](/public/yourbook.png)
 
-You can [🔗 **use this template on CodeSandbox**](https://codesandbox.io/p/sandbox/github/neuefische/web-exercises/tree/main/templates/next?file=/README.md) or locally by running this command in your Terminal:
+📚 YourBook app is your bookstore for on the go and at home, always and everywhere available. Order at any time. With the YourBook app, your favorite bookstore is there for you 24 hours a day, 7 days a week. Our search function will also help you to find exactly the items you are looking for.
 
-```bash
-npx -y ghcd@latest neuefische/web-exercises/tree/main/templates/next my-app -i
-```
+## Demo:
 
-## Development
+You can find the hosted version on Vercel: [Demo Version of Capstone Project](https://yourbook.vercel.app/)
 
-### Local Development
+**Important:** This demo is optimized for mobile screen.
 
-To work locally, please install the dependencies using `npm i` first.
+![App screens](/public/Screenshots_app.png)
 
-Run `npm run dev` to start a development server and open the displayed URL in a browser.
+## Tech Stack
 
-Use `npm run test` to run the tests.
+- React
+- React Hooks
+- React Router
+- Next.js
+- Vercel
+- styled-components
+- localStorage
+- npm
 
-### CodeSandbox Cloud
+## Project Setup
 
-Select the "Preview: 3000" tab to view this project.
-
-Select the "Tests: logs" tab to view the tests.
-
-> The `npm run dev` and `npm run test` scripts run automatically.
-
-### Scripts
-
-You can use the following commands:
-
-- `npm run dev` to start a development server
-- `npm run build` to build the project
-- `npm run start` to start a production server
-- `npm run test` to run the tests
-- `npm run lint` to run the linter
+- Clone this repository.
+- Install all dependencies using `npm install`.
+- Run app in development mode using `npm run dev`.
+- Open server: [http://localhost:3000/](http://localhost:3000/).
