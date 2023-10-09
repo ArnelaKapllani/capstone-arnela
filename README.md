@@ -29,3 +29,4 @@ You can find the hosted version on Vercel: [Demo Version of Capstone Project](ht
 - Install all dependencies using `npm install`.
 - Run app in development mode using `npm run dev`.
 - Open server: [http://localhost:3000/](http://localhost:3000/).
+  h ¨«∑⁄¨⁄∑∑WUW
